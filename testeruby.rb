@@ -60,4 +60,4 @@ def par
     else
         puts("its impar")
     end
-
+end
