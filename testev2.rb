@@ -1,21 +1,60 @@
-puts = ("Enter first number: ")
+#!/usr/bin/env ruby
+
+#simple calculator
+puts "Enter first number: "
 num1 = gets.chomp().to_f #to_f converte string para float
-puts = ("Enter operator: ")
+puts "Enter operator: "
 operator = gets.chomp()
-puts = ("Enter second number: ")
+puts "Enter second number: "
 num2 = gets.chomp().to_f
 
 if operator == "+"
-    puts = (num1 + num2)
+    puts num1 + num2
 elsif operator == "-"
-    puts = (num1 - num2)
+    puts num1 - num2
 elsif operator == "*"
-    puts = (num1 * num2)
+    puts num1 * num2
 elsif operator == "/"
-    puts = (num1 / num2)
+    puts num1 / num2
 else
-    puts = ("Invalid operator")
+    puts "Invalid operator"
 end
+
+
+
+#while loop
+index = 1
+while index <= 5
+    puts = (index)
+    index += 1
+end
+
+
+
+secret_word = "gato"
+guess = ""
+guess_count = 0
+guess_limit = 3
+out_of_guesses = false
+
+while guess != secret_word and not out_of_guesses
+  if guess_count < guess_limit
+    puts = ('Enter your guess: ')
+    guess = gets.chomp()
+    guess_count += 1
+  else
+    out_of_guesses = true
+  end
+end
+
+if out_of_guesses
+    puts ("You lose!")
+else
+puts ("You guessed it!")
+end
+
+
+
 
 # puts("Enter your name: ")
 # name = gets.chomp()
