@@ -1,20 +1,36 @@
 #!/usr/bin/env ruby 
-require 'json';
+#require 'json';
 require 'yaml';
 
 #require_relative 'translator.rb'
 
-Translator_italian = {
-"hello" => "ciao",
-"goodbye" => "arrivederci",
-"please" =>  "per favore"
-};
+#Translator_italian = {
+#"hello" => "ciao",
+##"please" =>  "per favore"
+#};
 
-def translate_italian(word)
-  puts "Translating to Italian..."
-    return Translator_italian[word]
+
+def load_yml(file_path) #funcao para carregar o arquivo YML
+file = File.read(file_path)
+data = YAML.load(file)
 end
 
-puts "Enter a word to translate to Italian:"
-word = gets.chomp().downcase #converte a string para minúsculas
-puts translate_italian(word)
+Translations_italian = load_yml('translatoritalian.yml') #carregando o arquivo YML com as traduções
+
+def translate_italian(word)
+    return Translations_italian[word]
+end
+
+
+
+def enter_word_italian 
+    puts "Enter a word to translate to Italian:"
+    word = gets.chomp().downcase
+end
+
+if Translations_italian.key?(word = enter_word_italian)
+  puts translate_italian(word)
+else
+  puts "Sorry, the word '#{word}' is not in the Italian dictionary."
+end;
+

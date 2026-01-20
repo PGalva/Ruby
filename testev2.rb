@@ -39,7 +39,7 @@ out_of_guesses = false
 
 while guess != secret_word and not out_of_guesses
   if guess_count < guess_limit
-    puts = ('Enter your guess: ')
+    puts 'Enter your guess: '
     guess = gets.chomp()
     guess_count += 1
   else
@@ -48,11 +48,27 @@ while guess != secret_word and not out_of_guesses
 end
 
 if out_of_guesses
-    puts ("You lose!")
+    puts "You lose!"
 else
-puts ("You guessed it!")
+puts "You guessed it!"
 end
 
+
+
+def multiply(num1, num2)
+  return num1 * num2
+end
+
+puts "Enter first number to multiply: "
+num = gets.chomp().to_f
+puts "Enter second number to multiply: "
+num2 = gets.chomp().to_f
+puts "The result is: #{multiply(num, num2)}"
+
+#while num <= 10
+#puts num
+#num += 1
+#end
 
 
 
