@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby 
 
-require_relative "testev2.rb"
 require"json"
 
 def book_info(title,author,pages)
@@ -9,13 +8,13 @@ end
 
 
 def load_json(file_path)
-  return {} unless File.exist?(file_path) #verifica se o arquivo existe
+  return [] unless File.exist?(file_path) #verifica se o arquivo existe
   content = File.read(file_path).strip #lê o conteúdo do arquivo e remove espaços em branco
-  return {} if content.empty? #verifica se o conteúdo está vazio
-  JSON.parse(content)
+  return [] if content.empty? #verifica se o conteúdo está vazio
+  JSON.parse(content)# analisa o conteúdo JSON e retorna um hash
 end
 
-booksbyyear = load_json('booksbyyear.json')
+booksbyyear = load_json('booksbyyear.json') #carregando o arquivo JSON
 
 def get_books_by_year()
   puts"Enter the title: "
@@ -33,7 +32,7 @@ end
 
 def send_books_to_json(file_path,data)
   File.open(file_path,'w') do |f|
-    f.write(JSON.pretty_generate(data))
+    f.write(JSON.pretty_generate(data)) # 
   end
 end
 
@@ -42,9 +41,9 @@ def add_book_json()
   books = [] unless books.is_a?(Array) #verifica se books é um array
 
   newbook = get_books_by_year
-  books << newbook
+  books << newbook 
 
-  send_books_to_json('booksbyyear.json', books)
+  send_books_to_json('booksbyyear.json', books) # salvando o array atualizado no arquivo JSON
 end
 
-add_book_json()
+add_book_json() # chamando a função para adicionar o livro
