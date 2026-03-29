@@ -147,7 +147,103 @@ puts "Not permmited because you have reached the daily limit"
 end
 end
   
+class CounterAnalyser
+  attr_reader :number
+
+def initialize(number)
+  @number = [1,2,3,4,5,6,7,8,9,10]
+
+  def self.create(number)
+    new(number)
+  end
+
+def smallest()
+  smallest = @number[0]
+  for number in @number
+    if number < smallest
+      smallest = number
+    end
+  end
+        puts "The smallest number is #{smallest}"
 
 
-  
-     
+
+end 
+end
+end
+
+class counterpair()
+  attr_reader :number
+
+  def initialize(number)
+    @number = [1,2,3,4,5,6,7,8,9,10]
+  end
+ def self.create(number)
+
+  def even_counter()
+    for number in @number
+      if number % 2 == 0
+        puts "#{number} is an even number"
+      end
+    end
+  end
+
+end
+
+class Count_name
+  attr_reader :name
+  def initialize(name)
+    @name = ["counter", "analyser", "ruby", "programming"] 
+  end
+  def self.create(name)
+
+  def count_name()
+    for name in @name
+      if name.length > 3
+        puts "#{name}"
+      end
+      end
+    end
+  end
+end
+
+class Word_analyser
+  attr_reader :word
+
+  def initialize(word)
+    @word = ["counter", "analyser", "ruby", "programming"]
+  end
+  def self.create(word)
+    
+    def count_name()
+      word.each do |word|
+        puts "#{word} has #{word.length} characters"
+      end
+      end
+    end
+  end
+end
+
+
+class Soma
+  attr_reader :number
+  def initialize(number)
+    @number = [1,2,3,4,5,6,7]
+  end
+  def self.create(number)
+    new(number)
+  end
+
+  def sum()
+    total = 0
+  end
+    for number in @number
+      total += number
+    end
+    puts "The sum of the numbers is #{total}"
+  end
+end
+
+soma = Soma.create([1,2,3,4,5,6,7])
+puts soma.sum
+
