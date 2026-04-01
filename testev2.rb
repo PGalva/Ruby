@@ -283,11 +283,11 @@ class Carimbo
     @carimbo = carimbo # variável de instância para armazenar o valor do carimbo
   end
 
-  def self.create(carimbo)
-    new carimbo
+  def self.create(carimbo) # método de classe para criar um novo objeto da classe Carimbo
+    new(carimbo) # chama o método initialize para criar um novo objeto com o valor do carimbo
   end
 
-def marcar()
+def marcar() # método para marcar o carimbo
   puts "Carimbo marcado com sucesso!"
 end
 end
@@ -311,7 +311,7 @@ class Guerreiro
     puts "Guerreiro: #{@nome}, Energia: #{@energia}"
   end
 
-  def self.regras_de_jogo
+  def self.regras_de_jogo #self indica que o método é de classe, ou seja, pode ser chamado sem criar um objeto da classe
     puts "Regras do jogo:"
     puts "- Cada guerreiro tem um nome e energia"
     puts "- A energia diminui a cada ação"
