@@ -247,3 +247,83 @@ end
 soma = Soma.create([1,2,3,4,5,6,7])
 puts soma.sum
 
+
+
+class Invited
+  attr_reader :name
+
+  def initialize(name)
+    @name = name
+  end
+  def self.create(name)
+    new(name)
+
+  def filter()
+    @name.select do |name|
+      name.length > 5 || name.include?("C")
+      end 
+    end
+  end
+end
+end
+
+list = Invited.create(["Alice", "Bob", "Charlie", "David", "Eve", "Frank"])
+
+list.filter.each do |name|
+  puts "#{name} is an invited guest"
+end
+
+
+
+
+class Carimbo
+  attr_reader :marcar
+
+  def initialize(carimbo)
+    @carimbo = carimbo # variável de instância para armazenar o valor do carimbo
+  end
+
+  def self.create(carimbo)
+    new carimbo
+  end
+
+def marcar()
+  puts "Carimbo marcado com sucesso!"
+end
+end
+
+c1 = Carimbo.create("Carimbo 1") # cria um objeto da classe Carimbo com o valor "Carimbo 1"
+c1.marcar
+
+class Guerreiro
+  attr_reader :nome, :energia
+
+  def initialize(nome, energia)
+    @nome = nome
+    @energia = energia
+  end
+
+  def self.create(nome, energia)
+    new(nome, energia)
+  end 
+  
+  def status 
+    puts "Guerreiro: #{@nome}, Energia: #{@energia}"
+  end
+
+  def self.regras_de_jogo
+    puts "Regras do jogo:"
+    puts "- Cada guerreiro tem um nome e energia"
+    puts "- A energia diminui a cada ação"
+    puts "- O jogo termina quando a energia de todos os guerreiros chegar a zero"
+  end
+
+end
+
+g1 = Guerreiro.create("Arthur", 100) # cria um objeto da classe Guerreiro com o nome "Arthur" e energia 100
+g1.status
+Guerreiro.regras_de_jogo # chama o método de classe para exibir as regras do jogo
+
+g2 = Guerreiro.create("Lancelot", 80)
+g2.status
+
