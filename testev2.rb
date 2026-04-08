@@ -327,3 +327,72 @@ Guerreiro.regras_de_jogo # chama o método de classe para exibir as regras do jo
 g2 = Guerreiro.create("Lancelot", 80)
 g2.status
 
+class Turkey
+  HEAT_TIME = 50
+
+def minutes_lasts(time)
+  Faltam = HEAT_TIME - time
+  puts "The turkey will last for #{Faltam} minutes"
+end
+  
+def quantity_heat(quantity)
+  preparo = quantity * 2
+  puts "The turkey will last for #{preparo} minutes"
+end
+
+def time_and_quantity(time, quantity)
+  Faltam = HEAT_TIME - time + quantity * 2
+  puts "The turkey will last for #{Faltam} minutes"
+end
+
+peru = Turkey.new
+peru.minutes_lasts(20)
+peru.quantity_heat(3)
+peru.time_and_quantity(20, 3)
+
+
+class Cart
+  attr_reader :items
+
+  def initialize(items)
+    @items = {fruta: items[0], legume: items[1], carne: items[2], bebida: items[3]} # variável de instância para armazenar os itens do carrinho
+  end
+
+    def self.create(items)
+      new(items)
+    end
+  
+    def see_items()
+      @items.each do |category, item|
+        puts "Category: #{category}, Item: #{item}"
+      end
+    end
+
+    def add_item(category, item)
+      puts "Enter the category: "
+      category = gets.chomp().to_sym # converte a entrada para simbolos
+      puts "Enter the item: "
+      item = gets.chomp()
+      @items[category] = item # adiciona o item à categoria correspondente no hash
+      puts "Item added successfully!"
+    end
+end
+
+
+class cesta
+  attr_reader :items
+
+  def initialize(items)
+    @items = ["fruta", "legume", "carne", "bebida"]
+  end
+  def self.create(items)
+  new(items)
+  end
+
+  def add_item_cesta()
+    puts "Enter the food: "
+    food = gets.chomp()
+    @items << food # adiciona o item à lista de itens
+    puts "Item added to the basket successfully!"
+  end
+end
