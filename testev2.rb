@@ -396,3 +396,102 @@ class cesta
     puts "Item added to the basket successfully!"
   end
 end
+
+class Lasagna
+  attr_reader :ingredients
+  def initialize(extra)
+    @ingredients = ["massa", "molho", "queijo", "carne"]
+    @ingredients << extra # adiciona o ingrediente extra à lista de ingredientes
+  end
+  def self.create(ingredients)
+    new(ingredients)
+  end
+
+  TIME_IN_OVEN = 45
+
+  def add_ingredients()
+    puts "Enter the ingredient:"
+    ingredients = gets.chomp()
+    @ingredients << ingredients
+    puts "Ingredient added successfully!"
+  end
+
+  def time_in_oven(time)
+    time_ready = TIME_IN_OVEN - time
+    puts "The lasagna will be ready in #{time_ready} minutes"
+  end
+end
+
+massa = Lasagna.create()
+massa.add_ingredients()
+massa.time_in_oven(20)
+
+
+
+class Pizza
+  
+  TIME_TO_COOK = 20
+
+  attr_reader :ingredients
+  def initialize(ingredients)
+    @ingredients = ["massa", "molho", "queijo", "calabresa"]
+  end
+  def self.create(ingredients)
+    new(ingredients)
+  end
+
+  def add_ingredients()
+    puts "Do you want to add more ingredients? (yes/no)"
+    answer = gets.chomp().downcase()
+    if answer == "yes"
+      puts "Enter the ingredient:"
+      ingredient = gets.chomp()
+      @ingredients << ingredient
+      puts "Ingredient added successfully!"
+    else
+      puts "No more ingredients will be added."
+    end 
+  end
+
+  def time_to_cook(time)
+    time_ready = TIME_TO_COOK - time
+    puts "The pizza will be ready in #{time_ready} minutes"
+  end
+end
+
+mizza = Pizza.create()
+mizza.add_ingredients()
+mizza.time_to_cook(10)  
+
+
+
+#exercicio 4
+
+class Tree {
+
+YEARS_HERE = 30
+
+attr_reader: name, height
+
+def initialize(name, height)
+  @name = name
+  @height = height
+end
+
+def self.create(name, height)
+  new(name, height)
+end
+}
+
+def Tree.identify()
+  puts "Inform a tree name: "
+  name = gets.chomp()
+  puts "the tree is #{name}"
+end
+
+def Tree.grow()
+  puts "inform the tree growth:"
+  height = gets.chomp().to_i()
+ puts "the tree is #{height} meters tall"
+end
+
