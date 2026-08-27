@@ -1,5 +1,6 @@
 require_relative 'Boletos'
 require_relative 'Documentos'
+require_relative 'Imprimir'
 
 
 
@@ -11,5 +12,13 @@ def imprimir(papel)
   papel.exportar
 end
 
-processar.pagar(Boletos,300)
+doc = Documentos.new # sempre chama a classe para gerar um novo objeto
+imp = Imprimir.new 
+bol = Boletos.new
+
+
+doc.processar(Boletos,300)
+bol.processar(Cripto,250)
+
+imp.imprimir(Documentos)
 
