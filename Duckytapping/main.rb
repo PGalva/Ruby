@@ -1,4 +1,5 @@
 require_relative 'Boletos'
+require_relative 'Documentos'
 
 
 
@@ -6,4 +7,9 @@ def processar(pagamento, valor)
   pagamento.pagar
 end
 
-processar.pagar(Cripto,300)
+def imprimir(papel)
+  papel.exportar
+end
+
+processar.pagar(Boletos,300)
+
