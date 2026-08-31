@@ -18,4 +18,8 @@ class User
     @phone.gsub(/D/, "") if @phone   
   end
 
+  def validate_email
+    @email.downcase if @email
+  end
+
 end
