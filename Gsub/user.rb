@@ -4,18 +4,18 @@ class User
   def initialize(phone,email,id)
   @phone = phone
   @email = email
-  @id = id
+  @id = id 
 
   trying_gsub
   validate_email
   validate_id
-
-  end
+  
 
   def self.create(phone,email,id)
 
 
-
+  end
+end
 
 
   private
@@ -29,7 +29,7 @@ class User
   end
 
   def validate_id
-    @id.gsub(/D/, "") if @@id
+    @id.gsub(/D/, "") if @id
   end
 
 end
