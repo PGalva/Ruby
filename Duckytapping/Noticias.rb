@@ -1,5 +1,5 @@
 class Noticias
-  def exportar_noticias(papel)
+  def exportar (noticia)
   puts "Imprimindo notícia"
   end
 end
