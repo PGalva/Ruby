@@ -29,4 +29,3 @@ end
 inc =  Contador.new(15)
 inc.incrementar()
 
-Contador.instance_variables;
