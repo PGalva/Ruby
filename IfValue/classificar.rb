@@ -1,10 +1,12 @@
 #!/usr/bin/env ruby 
 
-class ClassificarIdade
+class Classificar
 
   def classificar_idade(idade)
     if idade < 18
       resultado = 'menor de idade' 
+    else idade >= 18
+      resultado = 'maior de idade'
     end
 
     resultado
@@ -12,6 +14,3 @@ class ClassificarIdade
 
 end
 
-
-res = ClassificarIdade.new
-  puts res.classificar_idade(17)
