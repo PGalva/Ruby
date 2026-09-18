@@ -2,6 +2,7 @@ require_relative 'Boletos'
 require_relative 'Documentos'
 require_relative 'Imprimir'
 require_relative 'Noticias'
+require_relative 'notification'
 
 
 
@@ -22,3 +23,4 @@ bol = Boletos.new
 doc.processar(Boletos,300)
 bol.processar(Cripto,250)
 imp.gerar_impressao(Documentos)
+no.send_notification()
