@@ -24,7 +24,7 @@ doc.processar(Boletos,300)
 bol.processar(Cripto,250)
 imp.gerar_impressao(Documentos)
 
-
+~
 notificar = NotificationEmail.new
 
 
