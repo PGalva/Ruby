@@ -9,5 +9,8 @@ class NotificationSMS
   def send_notification()
     puts "Sending notification: #{@message}"
   end
+
+
+  
   
 end
