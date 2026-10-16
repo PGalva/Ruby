@@ -1,10 +1,14 @@
 class LogEmMemoriaAdapter
-  attr_reader :log_entries, :mensage
+  attr_reader :log_entries, :mensagem
 
-  def initialize
+  def initialize (mensagem)
     @log_entries = []
-    @mensage = ""
+    @mensagem = ""
+
   end
-  self.create(mensage)
-  new(mensage)
+
+  def registrar(mensagem)
+    @log_entries << mensagem
+  end
+
 end

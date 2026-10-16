@@ -1,5 +1,7 @@
 class LogTerminalAdapter
-  def keep_log(message)
-    
+
+  def registrar(mensagem)
+puts "[LOG TERMINAL]: #{mensagem}"
   end
+  
 end
